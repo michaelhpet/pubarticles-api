@@ -14,7 +14,8 @@ class ArticleService {
       ...(search ? { $text: { $search: search } } : {}),
     })
       .skip(offset)
-      .limit(limit);
+      .limit(limit)
+      .sort({ timestamp: "desc" });
     return articles;
   }
 
