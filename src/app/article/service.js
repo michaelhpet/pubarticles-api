@@ -3,8 +3,6 @@ const Article = require("./model");
 
 class ArticleService {
   async createArticle(payload) {
-    if (await Article.findOne({ title: payload.title }))
-      throw new AppError(400, "Article with this title already exists");
     return await Article.create(payload);
   }
 
