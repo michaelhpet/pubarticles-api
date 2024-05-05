@@ -27,7 +27,6 @@ cp .env.example .env
 
 ```
 DATABASE_URI=
-JWT_SECRET=
 ```
 
 > This project uses MongoDB Atlas. Therefore, `DATABASE_URI` is generated from Atlas.
