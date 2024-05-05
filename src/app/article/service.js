@@ -18,8 +18,12 @@ class ArticleService {
     return articles;
   }
 
-  async getCount() {
-    return await Article.countDocuments();
+  async getCount(payload) {
+    const { page: _, limit: __, search, ...query } = payload;
+    return await Article.countDocuments({
+      ...query,
+      ...(search ? { $text: { $search: search } } : {}),
+    });
   }
 }
 

@@ -29,7 +29,7 @@ class ArticleController {
   async getArticles(req, res, next) {
     try {
       const articles = await articleService.getArticles(req.query);
-      const totalCount = await articleService.getCount();
+      const totalCount = await articleService.getCount(req.query);
       const pagination = getPagination(req.query, articles.length, totalCount);
       res.json(
         success({ articles, pagination }, "Articles fetched successfully")
