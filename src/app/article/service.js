@@ -1,4 +1,3 @@
-const { AppError } = require("../../utils");
 const Article = require("./model");
 
 class ArticleService {
