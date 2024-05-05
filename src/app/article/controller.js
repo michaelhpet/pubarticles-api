@@ -10,7 +10,10 @@ class ArticleController {
    */
   async createArticle(req, res, next) {
     try {
-      const article = await articleService.createArticle(req.body);
+      const article = await articleService.createArticle({
+        ...req.body,
+        excerpt: req.body.body.substring(0, 200),
+      });
       res.json(success({ article }, "Article created successfully"));
     } catch (error) {
       next(error);

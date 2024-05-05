@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/article", articleRouter);
+app.use("/articles", articleRouter);
 
 app.use((req, res) => {
   res.status(404).json({

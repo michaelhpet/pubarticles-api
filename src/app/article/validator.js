@@ -5,8 +5,8 @@ const articleValidator = {
     body: Joi.object().keys({
       title: Joi.string().required(),
       body: Joi.string().required(),
-      author_name: Joi.string(),
-      tags: Joi.array().items(Joi.string()),
+      author_name: Joi.string().required(),
+      author_email: Joi.string().required(),
     }),
   }),
   getArticles: celebrate({
