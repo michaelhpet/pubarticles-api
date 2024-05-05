@@ -1,4 +1,4 @@
-const { AppError, calculateReadTime } = require("../../lib/utils");
+const { AppError, calculateReadTime } = require("../../utils");
 const Article = require("./model");
 
 class ArticleService {

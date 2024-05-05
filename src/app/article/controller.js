@@ -1,4 +1,4 @@
-const { success, getPagination } = require("../../lib/utils");
+const { success, getPagination } = require("../../utils");
 const articleService = require("./service");
 
 class ArticleController {
